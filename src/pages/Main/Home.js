@@ -9,8 +9,7 @@ const Home = () => {
   
   const filters = useSelector((state) => state.filter.filters)
   const {brands, stock} =filters;
-  console.log(products);
-  console.log(brands);
+ 
    const dispatch = useDispatch();
   useEffect(() => {
     fetch("http://localhost:5000/products")
@@ -21,7 +20,7 @@ const Home = () => {
   const activeClass = "text-white  bg-indigo-500 border-white";
  let content;
  if(products.length){
-  content =products.map((product) => (
+  content = products.map((product) => (
     <ProductCard key={product.model} product={product} />
   ))
  }
